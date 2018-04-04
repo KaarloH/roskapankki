@@ -17,7 +17,7 @@ module Roskapankki
         tupas_request = Roskapankki::Tupas::ClientRequest.new(filtered_parameters)
 
         response(
-          Roskapankki::UI::Template.render("Identification", locals: {
+          Roskapankki::UI::Template.render("identification", locals: {
             form_values: tupas_request.form_values
           })
         )
