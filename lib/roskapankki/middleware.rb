@@ -10,7 +10,7 @@ module Roskapankki
       request = Rack::Request.new(env)
 
       if request.path_info =~ Roskapankki::UI::Controller.route
-        Roskapankki::UI::Controller.new(request).response
+        Roskapankki::UI::Controller.new(request).perform
       else
         @app.call(env)
       end

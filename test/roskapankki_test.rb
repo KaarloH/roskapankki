@@ -15,10 +15,24 @@ class RoskapankkiTest < Minitest::Test
     assert_equal 'All responses are OK', last_response.body
   end
 
-  def test_renders_bank_template
+  def test_get_renders_bank_template
     get '/roskapankki'
 
     assert last_response.ok?
     assert_template "bank", last_response.body
+  end
+
+  def test_post_returns_success
+    post '/roskapankki'
+
+    assert last_response.ok?
+    assert_empty last_response.body
+  end
+
+  def test_put_returns_error
+    put '/roskapankki'
+
+    assert last_response.method_not_allowed?, "should return 405 Method Not Allowed"
+    assert_equal "405 Method Not Allowed", last_response.body
   end
 end
