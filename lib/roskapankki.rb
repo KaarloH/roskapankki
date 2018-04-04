@@ -1,7 +1,6 @@
 require "roskapankki/version"
+require "roskapankki/ui"
+require "roskapankki/middleware"
 
 module Roskapankki
-	def self.hi
-		"hello world"
-	end
 end
