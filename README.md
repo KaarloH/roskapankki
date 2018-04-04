@@ -22,7 +22,7 @@ And then execute:
 
 ## Usage
 
-TODO: Write usage instructions here
+TODO: Write usage instructions here.
 
 ## Development
 
