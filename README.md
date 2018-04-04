@@ -2,12 +2,16 @@
 
 Roskapankkki will be a gem creating a test bank for TUPAS (de facto standard for digital identification in Finland) in your Rack-based development environment.
 
+Roskapankki has been inspired by the internal tools of some unnamed software company. 😊
+
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'roskapankki'
+group :development do
+  gem 'roskapankki'
+end
 ```
 
 And then execute:
