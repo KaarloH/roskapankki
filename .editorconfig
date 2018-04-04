@@ -1,0 +1,33 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+# Set default charset
+[*]
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+indent_style = space
+
+# Indentation override for all JS and coffee
+[*.{coffee, js}]
+indent_style = space
+indent_size = 2
+
+# Indentation override for all CSS & SCSS
+[*.{scss, css}]
+indent_size = 2
+
+# Ruby style config
+[*.{rb, erb, sh}]
+indent_size = 2
+max_line_length = 120
+
+[*.yml]
+indent_size = 2
+
+[*.haml]
+indent_size = 4
