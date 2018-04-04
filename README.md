@@ -4,7 +4,8 @@ Roskapankki will be a gem creating a test bank for TUPAS (de facto standard for 
 
 Roskapankki has been inspired by the internal tools of some unnamed software company. 😊
 
-** Please note that this gem has not yet been published in Rubygems and includes some bugs and non Tupas-standard behaviour. **
+**Please note that this gem has not yet been published in Rubygems and includes some bugs and non Tupas-standard behaviour.**
+
 ## Installation
 
 Add this line to your application's Gemfile:
