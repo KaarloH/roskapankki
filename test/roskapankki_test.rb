@@ -18,13 +18,13 @@ class RoskapankkiTest < Minitest::Test
     get '/'
 
     assert last_response.ok?
-    assert_equal last_response.body, 'All responses are OK'
+    assert_equal 'All responses are OK', last_response.body
   end
 
   def test_responses_to_roskapankki_path
     get '/roskapankki'
 
     assert last_response.ok?
-    assert_empty last_response.body
+    assert_equal "Hello world!\n", last_response.body
   end
 end

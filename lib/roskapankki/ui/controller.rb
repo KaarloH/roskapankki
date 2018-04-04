@@ -1,3 +1,5 @@
+require "roskapankki/ui/template"
+
 module Roskapankki
   module UI
     class Controller
@@ -10,7 +12,11 @@ module Roskapankki
       end
 
       def response
-        [200, { 'Content-Type' => 'text/html' }, ['']]
+        [200, { 'Content-Type' => 'text/html' }, [render]]
+      end
+
+      def render
+        Roskapankki::UI::Template.render("bank")
       end
     end
   end
