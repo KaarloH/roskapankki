@@ -1,5 +1,5 @@
 require "erb"
-require 'ostruct'
+require "ostruct"
 
 module Roskapankki
   module UI
@@ -10,7 +10,7 @@ module Roskapankki
 
       def initialize(template_name, locals: {})
         @template_name = template_name
-        @locals = locals
+        @locals = OpenStruct.new(locals)
         @template = File.read(template_path)
       end
 
@@ -18,16 +18,8 @@ module Roskapankki
         "#{File.dirname(__FILE__)}/views/#{@template_name}.erb"
       end
 
-      def locals
-        OpenStruct.new(@locals)
-      end
-
-      def binding
-        locals.binding
-      end
-
       def render
-        ERB.new(@template).result(binding)
+        ERB.new(@template).result(@locals.instance_eval { binding })
       end
     end
   end

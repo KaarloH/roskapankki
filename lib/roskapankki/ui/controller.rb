@@ -1,24 +1,13 @@
 require "roskapankki/ui/template"
+require "roskapankki/tupas"
 
 module Roskapankki
   module UI
     class Controller
       attr_reader :request
 
-      def self.route
-        /roskapankki/
-      end
-
       def initialize(request)
         @request = request
-      end
-
-      def get
-        response(Roskapankki::UI::Template.render("bank"))
-      end
-
-      def post
-        response(nil)
       end
 
       def error(http_code, text = nil)
@@ -40,7 +29,14 @@ module Roskapankki
       end
 
       def response(content, http_code = 200)
-        [http_code, headers, [content]]
+        wrapped_content =
+          if content.nil?
+            []
+          else
+            [content]
+          end
+
+        [http_code, headers, wrapped_content]
       end
     end
   end

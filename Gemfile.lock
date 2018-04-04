@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    roskapankki (0.1.0)
+    roskapankki (0.0.1)
 
 GEM
   remote: https://rubygems.org/

@@ -3,8 +3,9 @@ require "test_helper"
 class TemplateTest < Minitest::Test
 
   def template
-    @template ||= Roskapankki::UI::Template.new("bank")
+    @template ||= Roskapankki::UI::Template.new("bank", locals: { form_values: [] })
   end
+
 
   def test_renders_template
     result = template.render
