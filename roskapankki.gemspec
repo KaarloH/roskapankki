@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Create your own TUPAS (de facto standard for digital identification in Finland) test bank."
   spec.description   = "Roskapankkki will be a gem creating a test bank for TUPAS (de facto standard for digital identification in Finland) in your Rack-based development environment."
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/KaarloH/roskapankki"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
