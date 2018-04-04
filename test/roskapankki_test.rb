@@ -8,12 +8,6 @@ class RoskapankkiTest < Minitest::Test
     refute_nil ::Roskapankki::VERSION
   end
 
-  def app
-    app = lambda { |env| [200, {'Content-Type' => 'text/plain'}, ['All responses are OK']] }
-    builder = Rack::Builder.new
-    builder.run Roskapankki::Middleware.new(app)
-  end
-
   def test_response_is_ok
     get '/'
 
@@ -21,10 +15,10 @@ class RoskapankkiTest < Minitest::Test
     assert_equal 'All responses are OK', last_response.body
   end
 
-  def test_responses_to_roskapankki_path
+  def test_renders_bank_template
     get '/roskapankki'
 
     assert last_response.ok?
-    assert_equal "Hello world!\n", last_response.body
+    assert_template "bank", last_response.body
   end
 end

@@ -1,1 +1,13 @@
-Hello world!
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  </head>
+  <body>
+    <h1>Roskapankki</h1>
+    <form method="post" action="/roskapankki">
+      <input type="text" placeholder="Insert Finnish identity code (henkilötunnus)" name="B02K_CUSTID" value="210281-9988" required/>
+      <input type="text" placeholder="Full name" name="B02K_CUSTNAME" value="MEIKALAINEN MATTI" required/>
+      <button type="submit">Identify</button>
+    </form>
+  </body>
+</html>
