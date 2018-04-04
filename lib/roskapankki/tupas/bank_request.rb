@@ -24,7 +24,7 @@ module Roskapankki
           "B02K_KEYVERS" => "0001",
           "B02K_ALG" => "03",
           "B02K_CUSTID" => @params["B02K_CUSTID"],
-          "B02K_CUSTTYPE" => "02"
+          "B02K_CUSTTYPE" => "01"
         }
 
         params.merge({"B02K_MAC" => Roskapankki::Tupas::Utils.compute_mac(params)})
