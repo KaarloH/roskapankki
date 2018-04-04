@@ -16,17 +16,17 @@ class IdentificationControllerTest < Minitest::Test
   end
 
   def test_get_renders_bank_template
-    get '/roskapankki/identify'
+    get '/roskapankki/identify', mock_identify_params
 
     assert last_response.ok?
     refute_empty last_response.body
   end
 
-  def test_post_returns_success
-    post '/roskapankki/identify'
+  def test_post_renders_bank_template
+    post '/roskapankki/identify', mock_identify_params
 
     assert last_response.ok?
-    assert_empty last_response.body
+    refute_empty last_response.body
   end
 
   def test_put_returns_error

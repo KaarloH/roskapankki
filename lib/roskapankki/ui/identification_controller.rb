@@ -6,7 +6,15 @@ module Roskapankki
       end
 
       def get
-        tupas_request = Roskapankki::Tupas::ClientRequest.new
+        process
+      end
+
+      def post
+        process
+      end
+
+      def process
+        tupas_request = Roskapankki::Tupas::ClientRequest.new(filtered_parameters)
 
         response(
           Roskapankki::UI::Template.render("Identification", locals: {
@@ -15,8 +23,8 @@ module Roskapankki
         )
       end
 
-      def post
-        response(nil)
+      def filtered_parameters
+        @filtered_parameters ||= params.select { |k, v| Roskapankki::Tupas::ClientRequest::ALLOWED_PARAMS.include?(k) }
       end
     end
   end
