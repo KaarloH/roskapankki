@@ -1,4 +1,4 @@
-# Roskapankki
+# Roskapankki [![Build Status](https://travis-ci.org/KaarloH/roskapankki.svg?branch=master)](https://travis-ci.org/KaarloH/roskapankki)
 
 Roskapankki will be a gem creating a test bank for TUPAS (de facto standard for digital identification in Finland) in your Rack-based development environment.
 
@@ -41,3 +41,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 ## Code of Conduct
 
 Everyone interacting in the Roskapankki project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/kaarloh/roskapankki/blob/master/CODE_OF_CONDUCT.md).
+!
