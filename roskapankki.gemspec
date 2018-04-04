@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Kaarlo Haikonen"]
   spec.email         = ["kaarlo@me.com"]
 
-  spec.summary       = "Roskapankkki will be a gem creating a test bank for TUPAS (de facto standard for digital identification in Finland) in your Rack-based development environment."
+  spec.summary       = "Create your own TUPAS (de facto standard for digital identification in Finland) test bank."
   spec.description   = "Roskapankkki will be a gem creating a test bank for TUPAS (de facto standard for digital identification in Finland) in your Rack-based development environment."
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
