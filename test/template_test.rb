@@ -3,7 +3,7 @@ require "test_helper"
 class TemplateTest < Minitest::Test
 
   def template
-    @template ||= Roskapankki::UI::Template.new("bank", locals: { form_values: [] })
+    @template ||= Roskapankki::UI::Template.new("identification", locals: { form_values: [] })
   end
 
 

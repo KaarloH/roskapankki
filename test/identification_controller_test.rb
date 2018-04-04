@@ -1,7 +1,7 @@
 require "test_helper"
 require "rack/test"
 
-class RoskapankkiTest < Minitest::Test
+class IdentificationControllerTest < Minitest::Test
   include Rack::Test::Methods
 
   def test_that_it_has_a_version_number
@@ -16,21 +16,21 @@ class RoskapankkiTest < Minitest::Test
   end
 
   def test_get_renders_bank_template
-    get '/roskapankki'
+    get '/roskapankki/identify'
 
     assert last_response.ok?
     refute_empty last_response.body
   end
 
   def test_post_returns_success
-    post '/roskapankki'
+    post '/roskapankki/identify'
 
     assert last_response.ok?
     assert_empty last_response.body
   end
 
   def test_put_returns_error
-    put '/roskapankki'
+    put '/roskapankki/identify'
 
     assert last_response.method_not_allowed?, "should return 405 Method Not Allowed"
     assert_equal "405 Method Not Allowed", last_response.body

@@ -6,6 +6,14 @@ module Roskapankki
     class Controller
       attr_reader :request
 
+      def self.controllers
+        [IdentificationController, VerificationController]
+      end
+
+      def self.select_controller(path)
+        controllers.find { |controller| path =~ controller.route }
+      end
+
       def initialize(request)
         @request = request
       end
@@ -15,9 +23,9 @@ module Roskapankki
       end
 
       def perform
-        if request.post?
+        if request.post? && respond_to?(:post)
           post
-        elsif request.get?
+        elsif request.get? && respond_to?(:get)
           get
         else
           error(405, "405 Method Not Allowed")
@@ -37,6 +45,14 @@ module Roskapankki
           end
 
         [http_code, headers, wrapped_content]
+      end
+
+      def redirect(location)
+        [302, {"Location" => location, "Content-Type" => "text/html"}, []]
+      end
+
+      def params
+        @request.params
       end
     end
   end

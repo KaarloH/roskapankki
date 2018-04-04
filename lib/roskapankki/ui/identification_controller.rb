@@ -1,15 +1,15 @@
 module Roskapankki
   module UI
-    class MockBankController < Controller
+    class IdentificationController < Controller
       def self.route
-        /roskapankki/
+        /roskapankki\/identify/
       end
 
       def get
         tupas_request = Roskapankki::Tupas::ClientRequest.new
 
         response(
-          Roskapankki::UI::Template.render("bank", locals: {
+          Roskapankki::UI::Template.render("Identification", locals: {
             form_values: tupas_request.form_values
           })
         )

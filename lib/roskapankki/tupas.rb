@@ -1,4 +1,5 @@
 require "roskapankki/tupas/client_request"
+require "roskapankki/tupas/bank_request"
 require "roskapankki/tupas/utils"
 
 module Roskapankki

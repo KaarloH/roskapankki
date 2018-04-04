@@ -9,8 +9,8 @@ module Roskapankki
     def call(env)
       request = Rack::Request.new(env)
 
-      if request.path_info =~ Roskapankki::UI::MockBankController.route
-        Roskapankki::UI::MockBankController.new(request).perform
+      if controller = Roskapankki::UI::Controller.select_controller(request.path_info)
+        controller.new(request).perform
       else
         @app.call(env)
       end

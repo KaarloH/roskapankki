@@ -4,13 +4,13 @@
     </head>
     <body>
         <h1>Roskapankki</h1>
-        <form method="post" action="/roskapankki">
+        <form method="post" action="/roskapankki/verify">
             <input type="text" placeholder="Insert Finnish identity code (henkilötunnus)" name="B02K_CUSTID" value="210281-9988" required/>
             <input type="text" placeholder="Full name" name="B02K_CUSTNAME" value="MEIKALAINEN MATTI" required/>
-            <button type="submit">Identify</button>
             <% form_values.each do |field_name, value| %>
-                <input type="text" name="<%= field_name %>" value="<%= value %>" />
+                <input type="hidden" name="<%= field_name %>" value="<%= value %>" />
             <% end %>
+            <button type="submit">Identify</button>
         </form>
     </body>
 </html>
